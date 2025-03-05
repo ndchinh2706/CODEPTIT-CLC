@@ -9,9 +9,8 @@ signed main(void){
     int T(1);
     if(typetest) cin >> T;
     while(T--){
-        char c; cin >> c;
-        if(c >= 'A' && c <= 'Z') cout << char(c + 32) << endl;
-        else cout << char(c - 32);
+        int n; cin >> n;
+        cout << (n * (n + 1)) / 2 << endl;
     }
     return 0;
 }

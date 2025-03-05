@@ -47,7 +47,7 @@ vector<int> primefacformat(int n){
     return res;
 }
 
-const bool typetest = 1;
+const bool typetest = 0;
 signed main(void){
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
     int T(1);
@@ -55,24 +55,10 @@ signed main(void){
     vector<int> fac;
     while(T--){
         int n; cin >> n;
-        for(int k = 2; k <= n; k++){
-            fac = primefacformat(k);
-            int size = sz(fac);
-            for(int i = 0; i < size; i += 2){
-                int prime = fac[i];
-                int cntprime = fac[i + 1];
-                if(m.find(prime) == m.end())   
-                    m[prime] = cntprime;
-                else m[prime] = max(m[prime], cntprime);
-            }
-        }
-        int res = 1;
-        //for(auto it = m.begin(); it != m.end(); it++)
-        //  cout << (*it).first << ' ' << (*it).second << endl;
-        for(auto it = m.begin(); it != m.end(); it++)
-            res = res * pow((*it).first, (*it).second);
-        m.clear(); fac.clear();
-        cout << res << endl;
+        fac = primefacformat(n);
+        int size = sz(fac);
+        for(int i = 0; i < size; i += 2)
+            cout << fac[i] << ' ' << fac[i + 1] << endl;
     }
     return 0;
 }

@@ -26,11 +26,11 @@ string formatdob(string& dob) {
     char sep;
     stringstream ss(dob);
     ss >> day >> sep >> month >> sep >> year;
-    stringstream formattedDate;
-    formattedDate << setw(2) << setfill('0') << day << "/"
-                  << setw(2) << setfill('0') << month << "/"
-                  << setw(4) << setfill('0') << year;
-    return formattedDate.str();
+    stringstream format;
+    format << setw(2) << setfill('0') << day << "/"
+           << setw(2) << setfill('0') << month << "/"
+           << setw(4) << setfill('0') << year;
+    return format.str();
 }
 
 void nhap(SinhVien &a){
